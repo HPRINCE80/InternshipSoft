@@ -1,21 +1,25 @@
 @import url('https://fonts.googleapis.com/css2?family=Arya:wght@400;700&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
-*{
+
+* {
     padding: 0;
     margin: 0;
     box-sizing: border-box;
     font-family: 'Poppins', sans-serif;
 }
-body{
+
+body {
     background-color: #1f242d;
     display: block;
 
 }
+
 a {
     color: white;
     text-decoration: none;
     cursor: pointer;
 }
-.navbar{
+
+.navbar {
     justify-content: space-around;
     align-items: center;
     display: flex;
@@ -26,24 +30,232 @@ a {
     z-index: 100;
     padding-right: 100px;
 }
-.navbar .logo{
+
+.navbar .logo {
     font-size: 30px;
     font-weight: 700;
 }
-.navbar ul{
+
+.navbar ul {
     display: flex;
 
 }
+
 .navbar ul li {
-   list-style: none;
+    list-style: none;
     margin-left: 35px;
 }
-.navbar ul li a{
-     font-size: 20px;
+
+.navbar ul li a {
+    font-size: 20px;
     font-weight: 500;
     transition: .5s;
 }
-.navbar ul li:hover a, 
-.navbar ul li.active a{
+
+.navbar ul li:hover a,
+.navbar ul li.active a {
     color: #7cf03d;
+}
+
+.home {
+    display: flex;
+    align-items: center;
+    color: #fff;
+    padding: 60px 9% 0;
+    height: 100vh;
+}
+
+.home-info h1 {
+    font-size: 55px;
+}
+
+.home-info h3 {
+    font-size: 31px;
+    margin-top: -10;
+    padding-left: 10px;
+
+}
+
+.homr-onfo p {
+    font-size: 16px;
+    margin: 10px 0 25px;
+}
+
+.home-info .btn_sci {
+    display: flex;
+    align-items: center;
+    margin-top: 20px;
+}
+.home-info h2 span {
+    position: relative;
+    display: inline-block;
+    color: transparent;
+    -webkit-text-stroke: .7px #7cf03d;
+    animation: display-text 16s linear infinite;
+    animation-delay: calc(-4s * var(--i));
+}
+
+@keyframes display-text {
+
+    25%,
+    100% {
+        display: none;
+    }
+}
+
+.home-info h2 span::before {
+    content: attr(data-text);
+    position: absolute;
+    width: 0%;
+    border-right: 2px solid #7cf03d;
+    color: #7cf03d;
+    white-space: nowrap;
+    overflow: hidden;
+    animation: fill-text 4s linear infinite;
+}
+
+@keyframes fill-text {
+
+    10%,
+    100% {
+        width: 0;
+    }
+
+    70%,
+    90% {
+        width: 100%;
+    }
+}
+.btn {
+    display: inline-block;
+    padding: 10px 30px;
+    background-color: rgb(24, 224, 6);
+    border: 2px solid rgb(9, 209, 13);
+    border-radius: 40px;
+    box-shadow: 0 0 10px;
+    font-size: 16px;
+    color: #1f242d;
+    font-weight: 600;
+    transition: .5s;
+}
+
+.btn:hover {
+    background: transparent;
+
+    color: #7cf03d;
+    box-shadow: none;
+}
+
+.home-info .btn_sci .social-icons a {
+    margin-left: 20px;
+    padding: 8px;
+    border: 2px solid #7cf03d;
+    border-radius: 50%;
+    object-fit: cover;
+    margin: 0 8px;
+    font-size: 20px;
+    color: #7cf03d;
+    transition: .5;
+}
+
+
+
+.social-icons a:hover {
+    background: #305f16;
+    color: #1f242d
+        /* hover color */
+        transform: scale(1.2);
+    box-shadow: 0 0 10px #7cf03d;
+}
+
+.fa-github:hover {
+    color: rgb(12, 12, 12);
+}
+
+.fa-instagram:hover {
+    color: #E1306C;
+}
+
+.fa-linkedin:hover {
+    color: #0077b5;
+}
+
+.fa-whatsapp:hover {
+    color: #25D366;
+}
+.home-img .img-box {
+    position: relative;
+    width: 32vw;
+    height: 32vw;
+    border-radius: 50%;
+    padding: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    animation: floatimage 4s ease-in-out infinite;
+    margin-left: 50px;
+}
+.home-img .img-box::before,
+.home-img .img-box::after {
+    content: '';
+    position: absolute;
+    width: 500px;
+    height: 500px;
+    background: conic-gradient(transparent, transparent, transparent, #7cf03d);
+    transform: rotate(0deg);
+    animation: rotate-border 10s linear infinite;
+}
+.home-img .img-box::after {
+    animation-delay: -5s;
+}
+
+@keyframes rotate-border {
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+.home-img .img-box .img-item {
+    width: 100%;
+    position: relative;
+    height: 100%;
+    background-color: #1f242d;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    overflow: hidden;
+    z-index: 1;
+    border: .1px solid #1f242d;
+    
+}
+
+.home-img .img-box .img-item img {
+    position: absolute;
+    display: block;
+    width: 85%;
+    object-fit: cover;
+    top: cover;
+    
+
+
+}
+
+@keyframes floatimage {
+    0% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-2.4rem);
+    }
+
+    100% {
+        transform: translateY(0);
+
+        .dropdown {
+            display: none;
+            position: relative;
+        }
+    }
 }
