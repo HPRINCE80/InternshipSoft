@@ -259,3 +259,9 @@ a {
         }
     }
 }
+.service{
+    color: #fff;
+    padding-left: 100px;
+    font-weight: 30px;
+    display: flex;
+}
